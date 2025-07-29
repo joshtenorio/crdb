@@ -9,9 +9,3 @@ directory = ".output/public"
 
 [observability]
 enabled = true
-
-[[ d1_databases ]]
-binding = "crdb_db"
-database_name = "crdb"
-database_id = "todo"
-migrations_dir = "drizzle"
