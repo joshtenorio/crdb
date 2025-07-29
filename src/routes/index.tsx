@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button } from 'src/components/ui/button'
+import { Button } from '@/components/ui/button'
 
 
 export const Route = createFileRoute('/')({
@@ -11,7 +11,7 @@ function Home() {
     <Button
       type="button"
     >
-      hehez
+      a
     </Button>
   )
 }
