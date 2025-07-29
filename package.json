@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "shadcn": "pnpm dlx shadcn@canary"
+    "shadcn": "pnpm dlx shadcn@canary",
+    "preview": "pnpm wrangler dev"
   },
   "keywords": [],
   "author": "",

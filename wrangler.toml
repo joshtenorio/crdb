@@ -1,5 +1,11 @@
-# wrangler.toml
+"$schema" = "node_modules/wrangler/config-schema.json"
 name = "crdb"
-pages_build_output_dir = "./dist"
-compatibility_flags = ["nodejs_compat"]
-compatibility_date = "2024-11-13"
+main = ".output/server/index.mjs"
+compatibility_date = "2025-07-29"
+compatibility_flags = [ "nodejs_compat" ]
+
+[assets]
+directory = ".output/public"
+
+[observability]
+enabled = true
