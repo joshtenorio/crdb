@@ -10,7 +10,7 @@ export default defineConfig({
   },
   plugins: [
     tsConfigPaths(),
-    tanstackStart({ customViteReactPlugin: true, target: 'cloudflare-module' }),
+    tanstackStart({ customViteReactPlugin: true, target: 'vercel' }),
     viteReact(),
   ],
 })

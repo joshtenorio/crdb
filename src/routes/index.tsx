@@ -1,5 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Button } from '@/components/ui/button'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, NavigationMenuLink } from '@/components/ui/navigation-menu'
+import { Separator } from '@/components/ui/separator'
+import { LogIn } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 
 export const Route = createFileRoute('/')({
@@ -8,10 +11,10 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <Button
-      type="button"
-    >
-      a
-    </Button>
+    <div>
+      <div className='flex flex-col'>
+      </div>
+    </div>
   )
 }
+
