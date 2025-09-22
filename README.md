@@ -23,6 +23,6 @@ tanstack start, drizzle, shadcn
 ## extra TODOs
 - [ ] color scheme
 - [ ] posthog
-
+- [ ] upload thing
 ## License
 TODO
