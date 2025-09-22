@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils'
 
 export function Navbar() {
     const { location } = useRouterState()
-    console.log(location.pathname)
     const inEvents = location.pathname.startsWith("/events")
     const inRankings = location.pathname.startsWith("/rankings")
 
