@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     <div>
       <NavigationMenu className='bg-navbar text-navbar-foreground'>
-        <NavigationMenuList className='px-4 py-1 space-x-2 w-screen h-13'>
+        <NavigationMenuList className='px-4 space-x-2 w-screen h-12'>
           <Separator orientation='vertical' className='bg-neutral-800' />
           <NavigationMenuItem>
             <NavigationMenuLink className='font-semibold hover:border-transparent'>
@@ -35,7 +35,6 @@ export function Navbar() {
           <Separator orientation='vertical' className='bg-neutral-800' />
         </NavigationMenuList>
       </NavigationMenu>
-      <Separator />
     </div>
   )
 }

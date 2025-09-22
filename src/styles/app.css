@@ -48,9 +48,13 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-navbar: var(--navbar);
   --color-navbar-foreground: var(--navbar-foreground);
+  --color-backdrop: var(--backdrop);
+  --color-page: var(--page);
 }
 
 :root {
+  --backdrop: oklch(0.8187 0.0022 197.11);
+  --page: oklch(0.8889 0.0027 286.34);
   --radius: 0.65rem;
   --navbar: oklch(0.3598 0 0);
   --navbar-foreground: oklch(0.985 0 0);

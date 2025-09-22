@@ -39,7 +39,12 @@ function RootComponent() {
   return (
     <RootDocument>
       <Navbar />
-      <Outlet />
+      <div className='bg-backdrop h-screen flex flex-row'>
+        <div className='w-1/3 max-w-1/5'></div>
+        <div className='grow bg-page'><Outlet /></div>
+        <div className='w-1/3 max-w-1/5'></div>
+      </div>
+      {/** TODO footer */}
     </RootDocument>
   )
 }
