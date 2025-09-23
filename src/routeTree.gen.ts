@@ -14,7 +14,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as EventsIndexRouteImport } from './routes/events/index'
 import { Route as EventsDemoRouteImport } from './routes/events/demo'
 import { Route as EventsDemoIndexRouteImport } from './routes/events/demo.index'
+import { Route as EventsDemoUpcomingRouteImport } from './routes/events/demo.upcoming'
 import { Route as EventsDemoEntriesRouteImport } from './routes/events/demo.entries'
+import { Route as EventsDemoBracketsRouteImport } from './routes/events/demo.brackets'
 
 const RankingsRoute = RankingsRouteImport.update({
   id: '/rankings',
@@ -41,9 +43,19 @@ const EventsDemoIndexRoute = EventsDemoIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EventsDemoRoute,
 } as any)
+const EventsDemoUpcomingRoute = EventsDemoUpcomingRouteImport.update({
+  id: '/upcoming',
+  path: '/upcoming',
+  getParentRoute: () => EventsDemoRoute,
+} as any)
 const EventsDemoEntriesRoute = EventsDemoEntriesRouteImport.update({
   id: '/entries',
   path: '/entries',
+  getParentRoute: () => EventsDemoRoute,
+} as any)
+const EventsDemoBracketsRoute = EventsDemoBracketsRouteImport.update({
+  id: '/brackets',
+  path: '/brackets',
   getParentRoute: () => EventsDemoRoute,
 } as any)
 
@@ -52,14 +64,18 @@ export interface FileRoutesByFullPath {
   '/rankings': typeof RankingsRoute
   '/events/demo': typeof EventsDemoRouteWithChildren
   '/events': typeof EventsIndexRoute
+  '/events/demo/brackets': typeof EventsDemoBracketsRoute
   '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo/upcoming': typeof EventsDemoUpcomingRoute
   '/events/demo/': typeof EventsDemoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/rankings': typeof RankingsRoute
   '/events': typeof EventsIndexRoute
+  '/events/demo/brackets': typeof EventsDemoBracketsRoute
   '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo/upcoming': typeof EventsDemoUpcomingRoute
   '/events/demo': typeof EventsDemoIndexRoute
 }
 export interface FileRoutesById {
@@ -68,7 +84,9 @@ export interface FileRoutesById {
   '/rankings': typeof RankingsRoute
   '/events/demo': typeof EventsDemoRouteWithChildren
   '/events/': typeof EventsIndexRoute
+  '/events/demo/brackets': typeof EventsDemoBracketsRoute
   '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo/upcoming': typeof EventsDemoUpcomingRoute
   '/events/demo/': typeof EventsDemoIndexRoute
 }
 export interface FileRouteTypes {
@@ -78,17 +96,28 @@ export interface FileRouteTypes {
     | '/rankings'
     | '/events/demo'
     | '/events'
+    | '/events/demo/brackets'
     | '/events/demo/entries'
+    | '/events/demo/upcoming'
     | '/events/demo/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rankings' | '/events' | '/events/demo/entries' | '/events/demo'
+  to:
+    | '/'
+    | '/rankings'
+    | '/events'
+    | '/events/demo/brackets'
+    | '/events/demo/entries'
+    | '/events/demo/upcoming'
+    | '/events/demo'
   id:
     | '__root__'
     | '/'
     | '/rankings'
     | '/events/demo'
     | '/events/'
+    | '/events/demo/brackets'
     | '/events/demo/entries'
+    | '/events/demo/upcoming'
     | '/events/demo/'
   fileRoutesById: FileRoutesById
 }
@@ -136,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsDemoIndexRouteImport
       parentRoute: typeof EventsDemoRoute
     }
+    '/events/demo/upcoming': {
+      id: '/events/demo/upcoming'
+      path: '/upcoming'
+      fullPath: '/events/demo/upcoming'
+      preLoaderRoute: typeof EventsDemoUpcomingRouteImport
+      parentRoute: typeof EventsDemoRoute
+    }
     '/events/demo/entries': {
       id: '/events/demo/entries'
       path: '/entries'
@@ -143,16 +179,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsDemoEntriesRouteImport
       parentRoute: typeof EventsDemoRoute
     }
+    '/events/demo/brackets': {
+      id: '/events/demo/brackets'
+      path: '/brackets'
+      fullPath: '/events/demo/brackets'
+      preLoaderRoute: typeof EventsDemoBracketsRouteImport
+      parentRoute: typeof EventsDemoRoute
+    }
   }
 }
 
 interface EventsDemoRouteChildren {
+  EventsDemoBracketsRoute: typeof EventsDemoBracketsRoute
   EventsDemoEntriesRoute: typeof EventsDemoEntriesRoute
+  EventsDemoUpcomingRoute: typeof EventsDemoUpcomingRoute
   EventsDemoIndexRoute: typeof EventsDemoIndexRoute
 }
 
 const EventsDemoRouteChildren: EventsDemoRouteChildren = {
+  EventsDemoBracketsRoute: EventsDemoBracketsRoute,
   EventsDemoEntriesRoute: EventsDemoEntriesRoute,
+  EventsDemoUpcomingRoute: EventsDemoUpcomingRoute,
   EventsDemoIndexRoute: EventsDemoIndexRoute,
 }
 

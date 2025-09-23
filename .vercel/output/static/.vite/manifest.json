@@ -1,0 +1,97 @@
+{
+  "../../~start/default-client-entry.tsx": {
+    "file": "assets/main-DpiwAHzd.js",
+    "name": "main",
+    "src": "../../~start/default-client-entry.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/routes/rankings.tsx?tsr-split=component",
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/events/index.tsx?tsr-split=component",
+      "src/routes/events/demo.tsx?tsr-split=component",
+      "src/routes/events/demo.index.tsx?tsr-split=component",
+      "src/routes/events/demo.upcoming.tsx?tsr-split=component",
+      "src/routes/events/demo.entries.tsx?tsr-split=component",
+      "src/routes/events/demo.brackets.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/app-GcWTw_w2.css"
+    ]
+  },
+  "D:/Code/crdb/src/styles/app.css": {
+    "file": "assets/app-GcWTw_w2.css",
+    "src": "D:/Code/crdb/src/styles/app.css"
+  },
+  "src/routes/events/demo.brackets.tsx?tsr-split=component": {
+    "file": "assets/demo.brackets-C_0IIYVk.js",
+    "name": "demo.brackets",
+    "src": "src/routes/events/demo.brackets.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/events/demo.entries.tsx?tsr-split=component": {
+    "file": "assets/demo.entries-D3mElU57.js",
+    "name": "demo.entries",
+    "src": "src/routes/events/demo.entries.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/events/demo.index.tsx?tsr-split=component": {
+    "file": "assets/demo.index-w_50o9k_.js",
+    "name": "demo.index",
+    "src": "src/routes/events/demo.index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/events/demo.tsx?tsr-split=component": {
+    "file": "assets/demo-CPEw2RDY.js",
+    "name": "demo",
+    "src": "src/routes/events/demo.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/events/demo.upcoming.tsx?tsr-split=component": {
+    "file": "assets/demo.upcoming-DyO8-OPI.js",
+    "name": "demo.upcoming",
+    "src": "src/routes/events/demo.upcoming.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/events/index.tsx?tsr-split=component": {
+    "file": "assets/index-D8x2jiK8.js",
+    "name": "index",
+    "src": "src/routes/events/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-nbnWFwBC.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/rankings.tsx?tsr-split=component": {
+    "file": "assets/rankings-DP7yikjG.js",
+    "name": "rankings",
+    "src": "src/routes/rankings.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../~start/default-client-entry.tsx"
+    ]
+  }
+}

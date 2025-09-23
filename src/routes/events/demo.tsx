@@ -1,7 +1,8 @@
 import { Badge } from '@/components/ui/badge'
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from '@/components/ui/navigation-menu'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
-import { createFileRoute, Outlet } from '@tanstack/react-router'
+import { createFileRoute, Link, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/events/demo')({
   component: RouteComponent,
@@ -15,6 +16,37 @@ function RouteComponent() {
     </div>
   )
 }
+
+const navbarEntries = [
+  {
+    title: "Overview",
+    href: "/events/demo"
+  },
+  {
+    title: "Entry List",
+    href: "/events/demo/entries"
+  },
+  {
+    title: "Agenda",
+    href: "/events/demo/entries"
+  },
+  {
+    title: "Travel",
+    href: "/events/demo/entries"
+  },
+  {
+    title: "Brackets",
+    href: "/events/demo/brackets"
+  },
+  {
+    title: "Upcoming Fights",
+    href: "/events/demo/upcoming"
+  },
+  {
+    title: "Livestream",
+    href: "/events/demo/entries"
+  }
+]
 
 function EventHeader() {
   return (
@@ -47,29 +79,21 @@ function EventHeader() {
       </div>
     <div>
     <Separator />
-      <div className='flex flex-row w-full grow px-4 h-12'> {/* event navigation */}
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Overview</div>
-        </div>
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Entry List</div>
-        </div>
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Agenda</div>
-        </div>
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Travel</div>
-        </div>
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Brackets</div>
-        </div>
-        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Upcoming Fights</div>
-        </div>
-        <div className='border-x p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
-          <div className='text-sm self-center text-sky-600'>Livestream</div>
-        </div>
-      </div>
+      <NavigationMenu className=''>
+        <NavigationMenuList className='flex flex-row w-full grow px-4 h-12'>
+          <Separator orientation='vertical' />
+          {
+            navbarEntries.map((entry: any, idx, arr) => (
+              <>
+              <NavigationMenuItem className='px-4 hover:bg-gray-300 h-full justify-center flex flex-col' asChild>
+              <Link to={entry.href} className='text-sm text-sky-600'>{entry.title}</Link>
+              </NavigationMenuItem>
+              <Separator orientation='vertical' /></>
+              )
+            )
+          }
+        </NavigationMenuList>
+      </NavigationMenu>
     </div>
     </div>
   )
