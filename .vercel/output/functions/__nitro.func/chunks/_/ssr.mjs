@@ -2902,7 +2902,7 @@ async function loadVirtualModule(id) {
     case VIRTUAL_MODULES.routeTree:
       return await Promise.resolve().then(() => routeTree_gen);
     case VIRTUAL_MODULES.startManifest:
-      return await import('./_tanstack-start-manifest_v-42PE4Y5q.mjs');
+      return await import('./_tanstack-start-manifest_v-C7gQ2-6N.mjs');
     case VIRTUAL_MODULES.serverFnManifest:
       return await import('./_tanstack-start-server-fn-manifest_v-DtgTK7xl.mjs');
     default:
@@ -3567,7 +3567,7 @@ const $$splitComponentImporter$5 = () => import('./index-h-PIiIsp.mjs');
 const Route$5 = createFileRoute("/events/")({
   component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-const $$splitComponentImporter$4 = () => import('./demo-BArGFK0d.mjs');
+const $$splitComponentImporter$4 = () => import('./demo-BAx1nT_E.mjs');
 const Route$4 = createFileRoute("/events/demo")({
   component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
@@ -3577,8 +3577,7 @@ const Route$3 = createFileRoute("/events/demo/")({
 });
 const $$splitComponentImporter$2 = () => import('./demo.upcoming-DcKyS2wj.mjs');
 const Route$2 = createFileRoute("/events/demo/upcoming")({
-  component: lazyRouteComponent($$splitComponentImporter$2, "component"),
-  ssr: true
+  component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
 const $$splitComponentImporter$1 = () => import('./demo.entries-C4htMRyu.mjs');
 const Route$1 = createFileRoute("/events/demo/entries")({

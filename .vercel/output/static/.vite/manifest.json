@@ -1,6 +1,6 @@
 {
   "../../~start/default-client-entry.tsx": {
-    "file": "assets/main-DpiwAHzd.js",
+    "file": "assets/main-Du37aEpa.js",
     "name": "main",
     "src": "../../~start/default-client-entry.tsx",
     "isEntry": true,
@@ -23,7 +23,7 @@
     "src": "D:/Code/crdb/src/styles/app.css"
   },
   "src/routes/events/demo.brackets.tsx?tsr-split=component": {
-    "file": "assets/demo.brackets-C_0IIYVk.js",
+    "file": "assets/demo.brackets-DDqzVs8O.js",
     "name": "demo.brackets",
     "src": "src/routes/events/demo.brackets.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -32,7 +32,7 @@
     ]
   },
   "src/routes/events/demo.entries.tsx?tsr-split=component": {
-    "file": "assets/demo.entries-D3mElU57.js",
+    "file": "assets/demo.entries-QJNCSkPC.js",
     "name": "demo.entries",
     "src": "src/routes/events/demo.entries.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "src/routes/events/demo.index.tsx?tsr-split=component": {
-    "file": "assets/demo.index-w_50o9k_.js",
+    "file": "assets/demo.index-HmdXO227.js",
     "name": "demo.index",
     "src": "src/routes/events/demo.index.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "src/routes/events/demo.tsx?tsr-split=component": {
-    "file": "assets/demo-CPEw2RDY.js",
+    "file": "assets/demo-CJhY9JjY.js",
     "name": "demo",
     "src": "src/routes/events/demo.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -59,7 +59,7 @@
     ]
   },
   "src/routes/events/demo.upcoming.tsx?tsr-split=component": {
-    "file": "assets/demo.upcoming-DyO8-OPI.js",
+    "file": "assets/demo.upcoming-vEMHbOXv.js",
     "name": "demo.upcoming",
     "src": "src/routes/events/demo.upcoming.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -68,7 +68,7 @@
     ]
   },
   "src/routes/events/index.tsx?tsr-split=component": {
-    "file": "assets/index-D8x2jiK8.js",
+    "file": "assets/index-DHW2Obhs.js",
     "name": "index",
     "src": "src/routes/events/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -77,7 +77,7 @@
     ]
   },
   "src/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-nbnWFwBC.js",
+    "file": "assets/index-BciMSKlY.js",
     "name": "index",
     "src": "src/routes/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
@@ -86,7 +86,7 @@
     ]
   },
   "src/routes/rankings.tsx?tsr-split=component": {
-    "file": "assets/rankings-DP7yikjG.js",
+    "file": "assets/rankings-ZlNVAYUt.js",
     "name": "rankings",
     "src": "src/routes/rankings.tsx?tsr-split=component",
     "isDynamicEntry": true,

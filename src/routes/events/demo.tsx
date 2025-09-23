@@ -79,6 +79,7 @@ function EventHeader() {
       </div>
     <div>
     <Separator />
+    {/** 
       <NavigationMenu className=''>
         <NavigationMenuList className='flex flex-row w-full grow px-4 h-12'>
           <Separator orientation='vertical' />
@@ -93,7 +94,7 @@ function EventHeader() {
             )
           }
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu>*/}
     </div>
     </div>
   )
