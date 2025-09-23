@@ -13,6 +13,8 @@ import { Route as RankingsRouteImport } from './routes/rankings'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EventsIndexRouteImport } from './routes/events/index'
 import { Route as EventsDemoRouteImport } from './routes/events/demo'
+import { Route as EventsDemoIndexRouteImport } from './routes/events/demo.index'
+import { Route as EventsDemoEntriesRouteImport } from './routes/events/demo.entries'
 
 const RankingsRoute = RankingsRouteImport.update({
   id: '/rankings',
@@ -34,38 +36,66 @@ const EventsDemoRoute = EventsDemoRouteImport.update({
   path: '/events/demo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsDemoIndexRoute = EventsDemoIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EventsDemoRoute,
+} as any)
+const EventsDemoEntriesRoute = EventsDemoEntriesRouteImport.update({
+  id: '/entries',
+  path: '/entries',
+  getParentRoute: () => EventsDemoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/rankings': typeof RankingsRoute
-  '/events/demo': typeof EventsDemoRoute
+  '/events/demo': typeof EventsDemoRouteWithChildren
   '/events': typeof EventsIndexRoute
+  '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo/': typeof EventsDemoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/rankings': typeof RankingsRoute
-  '/events/demo': typeof EventsDemoRoute
   '/events': typeof EventsIndexRoute
+  '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo': typeof EventsDemoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/rankings': typeof RankingsRoute
-  '/events/demo': typeof EventsDemoRoute
+  '/events/demo': typeof EventsDemoRouteWithChildren
   '/events/': typeof EventsIndexRoute
+  '/events/demo/entries': typeof EventsDemoEntriesRoute
+  '/events/demo/': typeof EventsDemoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/rankings' | '/events/demo' | '/events'
+  fullPaths:
+    | '/'
+    | '/rankings'
+    | '/events/demo'
+    | '/events'
+    | '/events/demo/entries'
+    | '/events/demo/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rankings' | '/events/demo' | '/events'
-  id: '__root__' | '/' | '/rankings' | '/events/demo' | '/events/'
+  to: '/' | '/rankings' | '/events' | '/events/demo/entries' | '/events/demo'
+  id:
+    | '__root__'
+    | '/'
+    | '/rankings'
+    | '/events/demo'
+    | '/events/'
+    | '/events/demo/entries'
+    | '/events/demo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   RankingsRoute: typeof RankingsRoute
-  EventsDemoRoute: typeof EventsDemoRoute
+  EventsDemoRoute: typeof EventsDemoRouteWithChildren
   EventsIndexRoute: typeof EventsIndexRoute
 }
 
@@ -99,13 +129,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/demo/': {
+      id: '/events/demo/'
+      path: '/'
+      fullPath: '/events/demo/'
+      preLoaderRoute: typeof EventsDemoIndexRouteImport
+      parentRoute: typeof EventsDemoRoute
+    }
+    '/events/demo/entries': {
+      id: '/events/demo/entries'
+      path: '/entries'
+      fullPath: '/events/demo/entries'
+      preLoaderRoute: typeof EventsDemoEntriesRouteImport
+      parentRoute: typeof EventsDemoRoute
+    }
   }
 }
+
+interface EventsDemoRouteChildren {
+  EventsDemoEntriesRoute: typeof EventsDemoEntriesRoute
+  EventsDemoIndexRoute: typeof EventsDemoIndexRoute
+}
+
+const EventsDemoRouteChildren: EventsDemoRouteChildren = {
+  EventsDemoEntriesRoute: EventsDemoEntriesRoute,
+  EventsDemoIndexRoute: EventsDemoIndexRoute,
+}
+
+const EventsDemoRouteWithChildren = EventsDemoRoute._addFileChildren(
+  EventsDemoRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   RankingsRoute: RankingsRoute,
-  EventsDemoRoute: EventsDemoRoute,
+  EventsDemoRoute: EventsDemoRouteWithChildren,
   EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport

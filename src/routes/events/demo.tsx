@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/events/demo')({
   component: RouteComponent,
@@ -11,9 +11,7 @@ function RouteComponent() {
   return (
     <div>
       <EventHeader/>
-      <div>
-        Hello "/events/demo"! this div should be replaced with outlet
-      </div>
+      <Outlet />
     </div>
   )
 }
@@ -54,7 +52,13 @@ function EventHeader() {
           <div className='text-sm self-center text-sky-600'>Overview</div>
         </div>
         <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
+          <div className='text-sm self-center text-sky-600'>Entry List</div>
+        </div>
+        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
           <div className='text-sm self-center text-sky-600'>Agenda</div>
+        </div>
+        <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
+          <div className='text-sm self-center text-sky-600'>Travel</div>
         </div>
         <div className='border-l p-4 flex flex-row hover:bg-gray-300'> {/* event navigation item */}
           <div className='text-sm self-center text-sky-600'>Brackets</div>

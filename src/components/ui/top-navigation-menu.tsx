@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-function NavigationMenu({
+function TopNavigationMenu({
   className,
   children,
   viewport = true,
@@ -24,12 +24,12 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      {viewport && <NavigationMenuViewport />}
+      {viewport && <TopNavigationMenuViewport />}
     </NavigationMenuPrimitive.Root>
   )
 }
 
-function NavigationMenuList({
+function TopNavigationMenuList({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {
@@ -45,7 +45,7 @@ function NavigationMenuList({
   )
 }
 
-function NavigationMenuItem({
+function TopNavigationMenuItem({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Item>) {
@@ -62,7 +62,7 @@ const navigationMenuTriggerStyle = cva(
   "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
 )
 
-function NavigationMenuTrigger({
+function TopNavigationMenuTrigger({
   className,
   children,
   ...props
@@ -82,7 +82,7 @@ function NavigationMenuTrigger({
   )
 }
 
-function NavigationMenuContent({
+function TopNavigationMenuContent({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Content>) {
@@ -99,7 +99,7 @@ function NavigationMenuContent({
   )
 }
 
-function NavigationMenuViewport({
+function TopNavigationMenuViewport({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
@@ -121,7 +121,7 @@ function NavigationMenuViewport({
   )
 }
 
-function NavigationMenuLink({
+function TopNavigationMenuLink({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Link>) {
@@ -129,7 +129,8 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+        " border-b-2 pb-1 data-[active=true]:focus:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col px-2 py-1 text-md outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+        props.active ? 'border-primary' : 'border-transparent hover:border-white',
         className
       )}
       {...props}
@@ -137,7 +138,7 @@ function NavigationMenuLink({
   )
 }
 
-function NavigationMenuIndicator({
+function TopNavigationMenuIndicator({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Indicator>) {
@@ -156,13 +157,13 @@ function NavigationMenuIndicator({
 }
 
 export {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
+  TopNavigationMenu,
+  TopNavigationMenuList,
+  TopNavigationMenuItem,
+  TopNavigationMenuContent,
+  TopNavigationMenuTrigger,
+  TopNavigationMenuLink,
+  TopNavigationMenuIndicator,
+  TopNavigationMenuViewport,
   navigationMenuTriggerStyle,
 }
