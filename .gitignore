@@ -4,3 +4,4 @@ node_modules
 .nitro
 .output
 .wrangler
+.vercel
