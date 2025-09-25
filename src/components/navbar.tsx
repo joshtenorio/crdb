@@ -15,19 +15,19 @@ export function Navbar() {
         <TopNavigationMenuList className='px-4 space-x-2 w-screen h-12'>
           <Separator orientation='vertical' className='bg-neutral-800' />
           <TopNavigationMenuItem>
-            <TopNavigationMenuLink className='font-semibold hover:border-transparent'>
+            <TopNavigationMenuLink className='font-semibold hover:border-transparent focus:bg-inherit focus:text-inherit' asChild>
               <Link to='/' >crdb.net</Link>
             </TopNavigationMenuLink>
           </TopNavigationMenuItem>
           <Separator orientation='vertical' className='bg-neutral-800' />
           <TopNavigationMenuItem>
-            <TopNavigationMenuLink className='' active={inEvents}>
+            <TopNavigationMenuLink className='focus:bg-inherit focus:text-inherit' active={inEvents} asChild>
               <Link to='/events' className=''>Events</Link>
             </TopNavigationMenuLink>
           </TopNavigationMenuItem>
           <Separator orientation='vertical' className='bg-neutral-800' />
           <TopNavigationMenuItem>
-            <TopNavigationMenuLink className='' active={inRankings}>
+            <TopNavigationMenuLink className='focus:bg-inherit focus:text-inherit' active={inRankings} asChild>
               <Link to='/rankings' className='font-display'>Rankings</Link>
             </TopNavigationMenuLink>
           </TopNavigationMenuItem>
