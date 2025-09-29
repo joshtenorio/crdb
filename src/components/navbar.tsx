@@ -11,8 +11,8 @@ export function Navbar() {
 
   return (
     <div>
-      <TopNavigationMenu className='bg-navbar text-navbar-foreground'>
-        <TopNavigationMenuList className='px-4 space-x-2 w-screen h-12'>
+      <TopNavigationMenu className='bg-navbar text-navbar-foreground max-w-full'>
+        <TopNavigationMenuList className='px-4 space-x-2 h-12'>
           <Separator orientation='vertical' className='bg-neutral-800' />
           <TopNavigationMenuItem>
             <TopNavigationMenuLink className='font-semibold hover:border-transparent focus:bg-inherit focus:text-inherit' asChild>
